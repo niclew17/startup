@@ -12,7 +12,7 @@ Imagine you’ve just been assigned to read a resume, but you really don’t hav
 ![Home](home1.png)
 ![User](user1.png)
 
-Here is a sequence diagram that shows how to people would interact with the backend to vote.
+Here is a sequence diagram that shows how two different users might interact with the server.
 
 ![AppliRank Sequence Diagram](diagram.JPG)
 

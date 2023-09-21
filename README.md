@@ -8,9 +8,9 @@ Imagine you’ve just been assigned to read a resume, but you really don’t hav
 
 ### Design
 
-![Mock](voterMockUI.jpg)
-![Mock](voterMockUI.jpg)
-![Mock](voterMockUI.jpg)
+![Login](login.png)
+![Home](home.png)
+![User](user.png)
 
 Here is a sequence diagram that shows how to people would interact with the backend to vote.
 

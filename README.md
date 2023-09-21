@@ -14,7 +14,7 @@ Imagine you’ve just been assigned to read a resume, but you really don’t hav
 
 Here is a sequence diagram that shows how to people would interact with the backend to vote.
 
-![Voting sequence diagram](votingSequenceDiagram.png)
+![AppliRank Sequence Diagram](Diagram.JPG)
 
 ### Key features
 

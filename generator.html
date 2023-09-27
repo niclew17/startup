@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+        table, th, td {
+           border:1px solid black;
+            }
+    </style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=
@@ -21,16 +26,22 @@
     </header>
     
     <main>
-        <h1>Generator</h1>
-        <form method="get">     
-              <input type="text" id="Job Description" placeholder="Job Description" />
-              <input type="file" id="file" name="varFile" accept="image/*" multiple />  
-              <div>
+        <table style="width:50%">
+            <tr>
+              <th colspan="2">Generator<p> This generator takes in two inputs: Your Job Description and an Inputted PDF resume file. Once both have been inputted please press generate to receive a rating and critique on the resume.</p></th>
+            </tr>
+            <tr>
+              <td><input type="text" id="Job Description" placeholder="Job Description" /></td>
+              <td><input type="file" id="file" name="varFile" accept="image/*" multiple /></td>
+            </tr>
+            <tr>
+              <td colspan="2"><div>
                 <label for="count">Generated Comparison</label>
-                <input type="text" id="count" value="--" readonly />
-              </div>
-              <button type="submit">Generate</button>
-        </form>
+                <input type="text" id="count" value="" readonly />
+              </div></td>
+             </tr>
+          </table>
+          <button type="submit">Generate</button>
     </main>
     <footer>
         <hr />

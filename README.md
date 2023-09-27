@@ -35,7 +35,7 @@ I am going to use the required technologies in the following ways.
 - **JavaScript** - Provides login, user input, file input, display responses from external APIs, and backend endpoint calls.
 - **Service** - Backend service with endpoints for:
   - login
-  - retrieving output from APId
+  - retrieving output from APIs
   - submitting user inputs to APIs
   - retrieving history of user inputs and produced outputs
 - **DB** - Store users, history of runs.

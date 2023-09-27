@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>AppliRank</h1>   
+        <h1>Home</h1>   
           <nav>
             <menu>
               <li><a href="index.html">Home</a></li>
@@ -18,8 +18,26 @@
             </menu>
           </nav>
         <hr />
-      </header>
+    </header>
     
+    <main>
+        <h1>Generator</h1>
+        <form method="get">     
+              <input type="text" id="Job Description" placeholder="Job Description" />
+              <input type="file" id="file" name="varFile" accept="image/*" multiple />  
+              <div>
+                <label for="count">Generated Comparison</label>
+                <input type="text" id="count" value="--" readonly />
+              </div>
+              <button type="submit">Generate</button>
+        </form>
+    </main>
+    <footer>
+        <hr />
+        <span class="text-reset">Author Name(s)</span>
+        <br />
+        <a href="https://github.com/niclew17/startup">GitHub</a>
+    </footer>
     
 </body>
 </html>

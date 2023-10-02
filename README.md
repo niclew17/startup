@@ -8,13 +8,13 @@ Imagine you’ve just been assigned to read a resume, but you really don’t hav
 
 ### Design
 
-![Login](login1.png)
-![Home](home1.png)
-![User](user1.png)
+![Login](images/login1.png)
+![Home](images/home1.png)
+![User](images/user1.png)
 
 Here is a sequence diagram that shows how two different users might interact with the server.
 
-![AppliRank Sequence Diagram](diagram.JPG)
+![AppliRank Sequence Diagram](images/diagram.JPG)
 
 ### Key features
 

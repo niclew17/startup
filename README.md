@@ -35,11 +35,23 @@ I am going to use the required technologies in the following ways.
 - **JavaScript** - Provides login, user input, file input, display responses from external APIs, and backend endpoint calls.
 - **Service** - Backend service with endpoints for:
   - login
-  - retrieving output from APId
+  - retrieving output from APIs
   - submitting user inputs to APIs
   - retrieving history of user inputs and produced outputs
 - **DB** - Store users, history of runs.
 - **Login** - Register and log in users. Credentials are securely stored in a database. Can't see user history unless authenticated.
 - **WebSocket** - As each new user is added, the total number of active accounts is shown on the website.
 - **React** - Application ported to use the React web framework.
+
+## HTML deliverable
+
+For this deliverable, I built out the structure of my application using HTML.
+
+- **HTML pages** - Three HTML pages that represent the ability to login, generate resume comparisons, and view your profile/history.
+- **Links** - The login page automatically links to the generate page on login. All other pages have links to each page.
+- **Text** - Text describes how to use the resume ranking generator and where to put files.
+- **Images** - I added a logo image as well as a profile picture for the user. 
+- **Login** - Input box for name and password as well as a submit button for login.
+- **Database** - The history blocks that are numbered represent a history of user submissions stored in a database.
+- **WebSocket** - The number of current users displayed represents information sharing amongst all users using a web socket.
 

@@ -6,21 +6,33 @@
     , initial-scale=1.0">
     <title>AppliRank</title>
     <link rel="icon" href="images/myfavicon.ico" />
-</head>
-<body>
-    <header>
-      <h1>Login</h1>   
-        <nav>
-          <menu>
-            <li><a href="index.html">Login</a></li>
-            <li><a href="generator.html">Home</a></li>
-            <li><a href="profile.html">Profile</a></li>
-          </menu>
-        </nav>
-      <hr /> 
-    </header>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
 
-    <main>
+  </head>
+<body class="bg-dark text-light">
+  <header class="container-fluid">
+    <nav class="navbar fixed-top navbar-dark">
+      <menu class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">LOGIN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="generator.html">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profile.html">PROFILE</a>
+        </li>
+      </menu>
+    </nav>
+  </header>
+
+    <main class="container-fluid bg-secondary text-center">
         <p><img src="images/AppliRankLogo.png" alt="AppliRank" width="500px"></p>
         <p>Login to Start Getting Ranked Resumes</p>
         <form method="get" action="generator.html">
@@ -37,11 +49,11 @@
     </main>
 
         
-    <footer>
-        <hr />
+    <footer class="bg-dark text-white-50">
+      <div class="container-fluid">
         <span class="text-reset">Author Name(s)</span>
-        <br />
-        <a href="https://github.com/niclew17/startup">GitHub</a>
+        <a class="text-reset" href="https://github.com/niclewis17/startup">Source</a>
+      </div>
     </footer>
 
 </body>

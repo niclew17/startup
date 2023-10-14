@@ -38,8 +38,32 @@ div.container {
 }
 
 div.table {
-margin-left: 30px;
-margin-right: 30px;
+margin-bottom: 60px;
+
+}
+#example td, #example th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#example {
+  font-family: Audiowide, Garabito, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#example tr {
+  background-color: #f2f2f2;
+}
+
+#example tr:hover {background-color: #919191;}
+
+#example th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #fab414;
+  color: white;
 }
 
 header {
@@ -69,8 +93,8 @@ menu {
 }
 
 menu .nav-item {
-  font-family: "Audiowide", sans-serif;
-  text-transform: uppercase;
+  padding: 0 0.3em;
+  padding-inline-start: 30px;
   color:#ffffff;
   width: auto; 
   text-align: center;
@@ -80,7 +104,8 @@ menu .nav-item {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; /* You can adjust this to control the stacking order */
+  z-index: 1000; 
+  /* You can adjust this to control the stacking order */
 }
 
 

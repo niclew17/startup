@@ -1,7 +1,9 @@
 *{
   font-family: "Gabarito", sans-serif;
 }
-
+h1{
+  font-family: "Audiowide", sans-serif;
+}
 body {
     display: flex;
     flex-direction: column;
@@ -39,7 +41,7 @@ body {
   
   menu .nav-item {
     padding: 0 0.3em;
-    padding-inline-start: 20px;
+    padding-inline-start: 30px;
     font-family: "Audiowide", sans-serif;
     text-transform: uppercase;
     color:#ffffff;

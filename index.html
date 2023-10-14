@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gabarito">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>AppliRank</title>
     <link rel="icon" href="images/myfavicon.ico" />
-    <link rel="stylesheet" href="main.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="main.css" />
 
   </head>
-<body class="bg-dark text-light">
+<body class="bg-black text-light">
   <header class="container-fluid">
-    <nav class="navbar fixed-top navbar-dark">
+    <nav id="navbar" class="navbar fixed-top navbar-dark">
       <menu class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link active" href="index.html">LOGIN</a>
@@ -37,19 +39,15 @@
         <p>Login to Start Getting Ranked Resumes</p>
         <form method="get" action="generator.html">
             <p>
-              <label for="name">Name</label>
-              <input type="text" id="Name" placeholder="Your name here" />
-            </p>
-            <p>
-              <label for="password">Password</label>
-              <input type="text" id="Password" placeholder="Your password here"/> 
+              <input type="text" id="Name" placeholder="Name" />
+              <input type="text" id="Password" placeholder="Password"/> 
             </p>
           <button type="submit">Login</button>
         </form>
     </main>
 
         
-    <footer class="bg-dark text-white-50">
+    <footer class="bg-black text-white-50">
       <div class="container-fluid">
         <span class="text-reset">Author Name(s)</span>
         <a class="text-reset" href="https://github.com/niclewis17/startup">Source</a>

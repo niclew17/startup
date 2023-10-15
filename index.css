@@ -1,5 +1,5 @@
 *{
-  font-family: "Gabarito", sans-serif;
+  font-family: "Audiowide", sans-serif;
 }
 h1{
   font-family: "Audiowide", sans-serif;
@@ -22,9 +22,6 @@ body {
     justify-content: space-around;
   }
   
-  footer {
-    flex: 0 30px;
-  }
   
   menu {
     flex: 1;
@@ -42,8 +39,6 @@ body {
   menu .nav-item {
     padding: 0 0.3em;
     padding-inline-start: 30px;
-    font-family: "Audiowide", sans-serif;
-    text-transform: uppercase;
     color:#ffffff;
     width: 100px; 
     text-align: center;
@@ -55,7 +50,6 @@ body {
     width: 100%;
     z-index: 1000; /* You can adjust this to control the stacking order */
   }
-
   footer a {
     float: right;
   }

@@ -1,5 +1,5 @@
 *{
-  font-family: "Gabarito", sans-serif;
+  font-family: "Audiowide", sans-serif;
 }
 
 
@@ -12,11 +12,23 @@ body {
 h1
   {
     font-family: "Audiowide", sans-serif;
+    font-size: 60px;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px #ffffff;
-    color:#000000
+    color:#000000;
+    
   }
-
+  
+button{
+    background-color: #000000;
+    color: white;
+    padding: 5px 25px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 25px;
+  }
 
 div.polaroid {
   background-color: #fab414;

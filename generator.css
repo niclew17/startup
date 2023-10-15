@@ -1,8 +1,9 @@
 *{
-  font-family: "Gabarito", sans-serif;
+  font-family: "Audiowide", sans-serif;
 }
 h1{
   font-family: "Audiowide", sans-serif;
+  font-size: 60px;
 }
 body {
     display: flex;
@@ -22,9 +23,32 @@ body {
     justify-content: space-around;
   }
   
-  footer {
-    flex: 0 30px;
+  #generate td, #generate th{
+    border: 1px solid #ddd;
+    padding: 8px;
   }
+  #generate{
+    font-family: Audiowide, Garabito, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+  }
+  #generate tr{
+    background-color: #f2f2f2;
+  }
+  #generate th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #fab414;
+    color: white;
+  }
+ 
+  #generate tr:hover {
+    background-color: #919191;
+  }
+
+  
   
   menu {
     flex: 1;
@@ -40,15 +64,62 @@ body {
   }
   
   menu .nav-item {
+    font-family: "Audiowide", sans-serif;
     padding: 0 0.3em;
     padding-inline-start: 30px;
-    font-family: "Audiowide", sans-serif;
-    text-transform: uppercase;
     color:#ffffff;
     width: 100px; 
     text-align: center;
   }
   
+  button{
+    background-color: #000000;
+    color: white;
+    padding: 10px 50px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 25px;
+  }
+  
+  label.label input[type="file"] {
+    position: absolute;
+    top: -1000px;
+  }
+  .label {
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 5px 50px;
+    margin: 5px;
+    background: #fab414;
+    display: inline-block;
+  }
+  .label:hover {
+    background: #000000;
+  }
+  .label:active {
+    background: #9fa1a0;
+  }
+  .label:invalid + span {
+    color: #000000;
+  }
+  .label:valid + span {
+    color: #ffffff;
+  }
+
+  #output{
+    margin-top: 30px;
+  }
+
+  p{
+    font-family: "Audiowide", sans-serif;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 20px
+  }
+
   #navbar {
     position: fixed;
     top: 0;

@@ -55,3 +55,14 @@ For this deliverable, I built out the structure of my application using HTML.
 - **Database** - The history blocks that are numbered represent a history of user submissions stored in a database.
 - **WebSocket** - The number of current users displayed represents information sharing amongst all users using a web socket.
 
+
+## CSS deliverable
+
+For this deliverable I properly styled the application into its final appearance.
+
+- **Header, footer, and main content body**
+- **Navigation elements** - I dropped the underlines and changed the color for anchor elements along with adding an active effect.
+- **Responsive to window resizing** - My app uses bootstrap and automatically changes content position based off of window sizes and devices
+- **Application elements** - Used a logo and a set color scheme to add consistency
+- **Application text content** - Consistent fonts and font sizes
+- **Application images** - Added image styling and rounding for profile page

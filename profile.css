@@ -50,7 +50,7 @@ div.container {
 }
 
 div.table {
-margin-bottom: 60px;
+  margin-bottom: 60px;
 
 }
 #example td, #example th {
@@ -113,7 +113,7 @@ menu .nav-item {
 }
 
 #navbar {
-  position: fixed;
+  position: static;
   top: 0;
   width: 100%;
   z-index: 1000; 

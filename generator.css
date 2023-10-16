@@ -48,7 +48,17 @@ body {
     background-color: #919191;
   }
 
-  
+  div.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+div.table {
+  display: flex;
+
+}
   
   menu {
     flex: 1;
@@ -121,7 +131,7 @@ body {
   }
 
   #navbar {
-    position: fixed;
+    position: static;
     top: 0;
     width: 100%;
     z-index: 1000; /* You can adjust this to control the stacking order */

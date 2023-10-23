@@ -10,11 +10,22 @@ body {
     min-width: 375px;
   }
   
-  header {
+header {
     flex: 0 80px;
   }
   
-  main {
+button{
+    background-color: #000000;
+    color: white;
+    padding: 5px 25px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 25px;
+  }
+
+main {
     flex: 1 calc(100vh - 110px);
     display: flex;
     flex-direction: column;

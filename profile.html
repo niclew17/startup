@@ -16,6 +16,7 @@
       rel="stylesheet"
       href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css"
     />
+    <script src="profile.js"></script>
     <script defer src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script
       defer
@@ -63,9 +64,9 @@
         <div class="container">
         <h1>Profile</h1>
         <p>
-          <input type="text" id="count" value="John Jones" readonly />
+          <textarea id="outputName" name="output" rows="1" cols="20" readonly></textarea>
           <p>
-          <input type="text" id="count" value="********" readonly />
+            <textarea id="outputPassword" name="output" rows="1" cols="20" readonly></textarea>
           </p>
           <p> <label for="count">Number of Current Users:</label>
           </p>
@@ -83,37 +84,7 @@
                     <th>Download</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Thomas</td>
-                    <td>Manager</td>
-                    <td><button type="button">Download</button></td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Mark</td>
-                    <td>Salesman</td>
-                    <td><button type="button">Download</button></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Seth</td>
-                    <td>Receptionist</td>
-                    <td><button type="button">Download</button></td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Donald</td>
-                    <td>Driver</td>
-                    <td><button type="button">Download</button></td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>Robert</td>
-                    <td>Secretary</td>
-                    <td><button type="button">Download</button></td>
-                  </tr>  
+                <tbody id="profileTableBody">
                 </tbody>
               </table>
             </div>

@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>AppliRank Generatpr</title>
+    <script src="generator.js"></script>
     <link rel="icon" href="images/myfavicon.ico" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -48,16 +49,16 @@
               <td><input type="text" id="Position" placeholder="Job Position"  /></td>
             </tr>
             <tr>
-              <td><input type="text" id="Job Description" placeholder="Job Description" /></td>
+              <td><input type="text" id="JobDescription" placeholder="Job Description" /></td>
               <td><label class="label">
-                <input type="file" required/>
+                <input type="file" id="File" required/>
                 <span>Select Resume PDF</span></td>
             </tr>
             <tr>
               <td colspan="2"><div>
                 <textarea id="output" name="output" rows="4" cols="90"></textarea>
               <br>
-                <button type="submit">Generate</button>
+                <button id="generateButton" type="submit">Generate</button>
               
               </div></td>
              </tr>

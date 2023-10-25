@@ -19,6 +19,9 @@ h1
     
   }
   
+#example thead {
+  color:#fab414 
+}
 button{
     background-color: #000000;
     color: white;
@@ -73,7 +76,7 @@ div.table {
 #example th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: center;
+  text-align: right;
   background-color: #fab414;
   color: white;
 }

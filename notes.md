@@ -11,11 +11,20 @@
 
 ### MIDTERM
 - In the following code, what does the link element do?
-  + Hello
+  + The <link>" tag defines the relationship between the current document and an external resource.
+  + The <link> tag is most often used to link to external style sheets or to add a favicon to your website.
+  + The <link> element is an empty element, it contains attributes only.
+  + href, media, rel(href specifies the location of the linked document)
 - In the following code,  what does a div tag do?
+  + The <div> element defines a division or a section in an HTML document
+  + The <div> tag is easily styled by using the class or id attribute.
+  + Any sort of content can be put inside the <div> tag! 
 - In the following code, what is the difference between the #title and .grid selector?
 - In the following code, what is the difference between padding and margin?
+  + Margin: It is the space around an element. Margins are used to move an element up or down on a page as well as left or right. Margin is completely transparent, and it does not have any background color. It clears the area around the element. Each side of the element has a margin size you can change individually. In creating the gap, the margin pushes adjacent elements away.
+  + Padding: It is the space between the element and the related content inside it. It determines how elements look and sit within a container. It also shows the container background around the element in it. Padding can be affected by background colors as it clears the area around the content. To create the gap, it either grows the element size or shrinks the content inside. By default, the size of the element increases.
 - Given this HTML and this CSS how will the images be displayed using flex?
+  + ![Alt text](image.png)
 - What does the following padding CSS do?
 - What does the following code using arrow syntax function declaration do?
 - What does the following code using map with an array output?

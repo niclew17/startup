@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Retrieve values from localStorage
   const outputTextarea = document.getElementById("outputName");
   const outputTextarea2 = document.getElementById("outputPassword");
-
   // Set values in the profile page
   outputTextarea.value = localStorage.getItem("profileName") || "John Jones";
   outputTextarea2.value = localStorage.getItem("profilePassword") || "*******";
+
 
   fetch("JSON/generator.json") 
   .then((response) => response.json())

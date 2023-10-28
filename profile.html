@@ -28,11 +28,6 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> 
     </script>
-    <script>
-      $(document).ready(function () {
-        $("#example").DataTable();
-      });
-    </script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -70,7 +65,7 @@
           </p>
           <p> <label for="count">Number of Current Users:</label>
           </p>
-          <p><input type="text" id="outputCount" value="1" readonly />
+          <p><textarea id="outputCount" name="output" rows="1" cols="20" readonly></textarea>
           </p>
       
         </div>

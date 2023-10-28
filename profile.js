@@ -2,9 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Retrieve values from localStorage
   const outputTextarea = document.getElementById("outputName");
   const outputTextarea2 = document.getElementById("outputPassword");
+  const outputTextarea3 = document.getElementById("outputCount");
   // Set values in the profile page
   outputTextarea.value = localStorage.getItem("profileName") || "John Jones";
   outputTextarea2.value = localStorage.getItem("profilePassword") || "*******";
+  outputTextarea3.value = localStorage.getItem("counter") || "*******";
 
 
   fetch("JSON/generator.json") 
@@ -21,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }); 
     
     data.forEach((row) => {
-        const downloadButton = '<button class="download-button">' + row.download + '</button>';
+        const downloadButton = '<button id=dwn-btn class="download-button">' + row.download + '</button>';
         $("#example").append(
           "<tr>" +
           "<td>" + row.rank + "</td>" +
@@ -61,6 +63,11 @@ document.addEventListener("DOMContentLoaded", function () {
     
     
 
-  )});  
+  )}); 
+
+
+
+
+
 
 

@@ -66,3 +66,12 @@ For this deliverable I properly styled the application into its final appearance
 - **Application elements** - Used a logo and a set color scheme to add consistency
 - **Application text content** - Consistent fonts and font sizes
 - **Application images** - Added image styling and rounding for profile page
+
+## JavaScript deliverable
+
+For this deliverable I implemented my JavaScript so that the application works for a single user. I also added placeholders for future technology.
+
+- **login** - When you press enter or the login button it takes you to the generator/home page and stores values into local storage.
+- **database** - Displays a set of fake generations in the user profile, all from JSON data. This JSON information will be stored in a DB with each user.
+- **WebSocket** - I made a generateButton function that will connect with an external API to produce a message to the screen. Currently, it is showing the JSON information that will be sent in this request.
+- **application logic** - The profile name and password are shown on the user profile after login.

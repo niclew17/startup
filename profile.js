@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
           columnDefs: [
             { "width": "100px", "targets": 0 },
             { "width": "250px", "targets": 1 },
+            { "width": "70px", "targets": 2 },
+            { "width": "70px", "targets": 3 },
           ],
           buttons: [
             'csv',

@@ -35,7 +35,7 @@ const generateResponse = (userMessage) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${API_KEY}`,
+      "Authorization": `Bearer ${"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"}`,
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",

@@ -21,7 +21,7 @@ apiRouter.get('/generation', (_req, res) => {
 
 // SubmitGeneration
 apiRouter.post('/generation', (req, res) => {
-  scores = updateScores(req.body, generations);
+  generations = updateGenerations(req.body, generations);
   res.send(generations);
 });
 
@@ -59,6 +59,7 @@ let generations = [ {
     "job": "Secretary",
     "download": "Download"
   }];
+
 function updateGenerations(newGenerations, generations) {
 
 //   let found = false;

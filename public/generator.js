@@ -24,21 +24,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const jsonData = JSON.stringify(data, null, 2);
     info = "Please take the following information and compare the Resume with the Job Description and the Job Position, give feedback as to if the candidate would perform well based off of the given information. Here is the information." + jsonData;
     generateResponse(info);
+    generateButton.setAttribute("disabled", "disabled");
   });
 });
 
 const generateResponse = (userMessage) => {
   const API_URL = "https://api.openai.com/v1/chat/completions";
   const messageElement = document.getElementById("output");
-
+  const KEY = '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'
   const requestOptions = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${"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"}`,
-    },
+      "Authorization": `Bearer ${KEY}`,
+    },  
     body: JSON.stringify({
-      model: "gpt-3.5-turbo",
+      model: "gpt-3.5-turbo-0613",
       messages: [{ role: "user", content: userMessage }],
     }),
   };
@@ -48,9 +49,14 @@ const generateResponse = (userMessage) => {
     .then((data) => {
       messageElement.textContent = data.choices[0].message.content.trim();
     })
-    .catch(() => {
+    .catch((r) => {
+      console.log(r);
       messageElement.classList.add("error");
       messageElement.textContent = "Oops! Something went wrong. Please try again.";
     })
-    .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
+    .finally(() => {
+      messageElement.scrollTo(0, messageElement.scrollHeight);
+      messageElement.style.height = messageElement.scrollHeight;
+      generateButton.removeAttribute("disabled");
+    });
 };

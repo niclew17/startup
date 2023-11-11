@@ -92,6 +92,9 @@ div.table {
     margin: 4px 2px;
     border-radius: 25px;
   }
+  button:disabled{
+    background-color: #333333;
+  }
   
   label.label input[type="file"] {
     position: absolute;

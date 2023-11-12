@@ -77,3 +77,14 @@ For this deliverable I implemented my JavaScript so that the application works f
 - **application logic** - The profile name and password are shown on the user profile after login. 
 
 My application requires little JavaScript as the main function of the program will be using external APIs. Please let me know if additional functionality would be required for my application.
+
+## Service deliverable
+
+For this deliverable, I added backend endpoints that receive previous generations and return the generations to the user's profile.
+
+- **Node.js/Express HTTP service** - Finished
+- **Static middleware for frontend** - Finished
+- **Calls to third party endpoints** - Third party call to ChatGpt Completion API.
+- **Backend service endpoints** - Generations are stored in JSON format and served to the frontend user.
+- **Frontend calls service endpoints** - Used a fetch call to get generation information to the profile data table.
+

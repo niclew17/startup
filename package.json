@@ -10,6 +10,8 @@
   "license": "MIT",
   "keywords": [],
   "dependencies": {
-    "express": "^4.18.2"
-  }
+    "express": "^4.18.2",
+    "mongodb": "^6.2.0"
+  },
+  "devDependencies": {}
 }

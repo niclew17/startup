@@ -23,15 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     const jsonData = JSON.stringify(data, null, 2);
     info = "Please take the following information and compare the Resume with the Job Description and the Job Position, give feedback as to if the candidate would perform well based off of the given information. Here is the information." + jsonData;
-    generateResponse(info);
+    generateResponse(info, data);
     generateButton.setAttribute("disabled", "disabled");
   });
 });
 
-const generateResponse = (userMessage) => {
+const generateResponse = (userMessage, inData) => {
   const API_URL = "https://api.openai.com/v1/chat/completions";
   const messageElement = document.getElementById("output");
-  const KEY = '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'
+  const KEY = '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'
   const requestOptions = {
     method: "POST",
     headers: {
@@ -43,11 +43,27 @@ const generateResponse = (userMessage) => {
       messages: [{ role: "user", content: userMessage }],
     }),
   };
-
+  console.log(inData);
   fetch(API_URL, requestOptions)
     .then((res) => res.json())
     .then((data) => {
       messageElement.textContent = data.choices[0].message.content.trim();
+      let generations = {  
+        "name": inData["Applicant Name"],
+        "job": inData["Job Position"],
+        "response": data.choices[0].message.content.trim()
+      };
+      fetch('api/generation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(generations),
+      })
+      .catch(error => {
+        // Handle errors
+        console.error('Error:', error);
+      });
     })
     .catch((r) => {
       console.log(r);
@@ -56,7 +72,7 @@ const generateResponse = (userMessage) => {
     })
     .finally(() => {
       messageElement.scrollTo(0, messageElement.scrollHeight);
-      messageElement.style.height = messageElement.scrollHeight;
+      messageElement.style.height = (messageElement.scrollHeight > messageElement.clientHeight) ? (messageElement.scrollHeight)+"px" : "60px";
       generateButton.removeAttribute("disabled");
     });
 };

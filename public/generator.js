@@ -31,12 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
 const generateResponse = (userMessage, inData) => {
   const API_URL = "https://api.openai.com/v1/chat/completions";
   const messageElement = document.getElementById("output");
-  const KEY = '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'
+  const config = require('.././dbConfig.json');
   const requestOptions = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${KEY}`,
+      "Authorization": `Bearer ${config.KEY}`,
     },  
     body: JSON.stringify({
       model: "gpt-3.5-turbo-0613",

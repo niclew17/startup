@@ -1,22 +1,8 @@
 localStorage.setItem("counter", 1);
 
-function login() {
-  const name = document.querySelector("#loginName");
-  const password = document.querySelector("#loginPassword");
-
-  localStorage.setItem("profileName", name.value);
-  localStorage.setItem("profilePassword", password.value);
-  
-  console.log(name.value);
-  console.log(password.value);
-  const loginData = {
-    "Name": name.value,
-    "Password": password.value
-  };
-  const loginjsonData = JSON.stringify(data, null, 2);
-  localStorage.setItem("profileJSON", loginjsonData);
-  window.location.href = "generator.html";
-  
+function login(e) {
+  e.preventDefault();
+  loginOrCreate(`/api/auth/login`);
 }
 function addUser() {
   const currentCounter = parseInt(localStorage.getItem("counter")) || 0;
@@ -24,4 +10,28 @@ function addUser() {
   localStorage.setItem("counter", newCounter);
 }
 
-  
+async function loginOrCreate(endpoint) {
+  const userName = document.querySelector('#loginName')?.value;
+  const password = document.querySelector('#loginPassword')?.value;
+  const response = await fetch(endpoint, {
+    method: 'post',
+    body: JSON.stringify({ username: userName, password: password }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+  if (response.ok) {
+    //window.location.href = 'generator.html';
+  } else if (endpoint.endsWith("/login")) {
+    loginOrCreate(`/api/auth/create`);
+  } else {
+    const body = await response.json();
+    console.log(body.msg);
+  }
+}
+function logout() {
+localStorage.removeItem('userName');
+fetch(`/api/auth/logout`, {
+  method: 'delete',
+}).then(() => (window.location.href = '/'));
+}

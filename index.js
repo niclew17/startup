@@ -57,17 +57,6 @@ apiRouter.delete('/auth/logout', (_req, res) => {
   res.status(204).end();
 });
 
-// GetUser returns information about a user
-apiRouter.get('/user/:username', async (req, res) => {
-  const user = await DB.getUser(req.params.username);
-  if (user) {
-    const token = req?.cookies.token;
-    res.send({ username: user.username, authenticated: token === user.token });
-    return;
-  }
-  res.status(404).send({ msg: 'Unknown' });
-});
-
 // secureApiRouter verifies credentials for endpoints
 var secureApiRouter = express.Router();
 apiRouter.use(secureApiRouter);
@@ -102,10 +91,10 @@ secureApiRouter.get('/generation', async (req, res) => {
   };
 });
 
-// SubmitGeneration
-secureApiRouter.post('/generation', (req, res) => {
+secureApiRouter.post('/chat', async (req, res) => {
   authToken = req.cookies[authCookieName];
-  updateGenerations(authToken, req.body).finally(res.send());
+  let msg = await DB.fetchChat(authToken, req.body.inData);
+  res.send({ msg: msg});
 });
 
 // Return the application's default page if the path is unknown

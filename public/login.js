@@ -4,11 +4,6 @@ function login(e) {
   e.preventDefault();
   loginOrCreate(`/api/auth/login`);
 }
-function addUser() {
-  const currentCounter = parseInt(localStorage.getItem("counter")) || 0;
-  const newCounter = currentCounter + 1;
-  localStorage.setItem("counter", newCounter);
-}
 
 async function loginOrCreate(endpoint) {
   const userName = document.querySelector('#loginName')?.value;
@@ -24,7 +19,6 @@ async function loginOrCreate(endpoint) {
     localStorage.setItem('profileName', userName);
     window.location.href = 'generator.html';
   } else if (endpoint.endsWith("/login")) {
-    console.log('ayeo');
     await loginOrCreate(`/api/auth/create`);
   } else {
     const body = await response.json();

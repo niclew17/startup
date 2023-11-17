@@ -40,7 +40,8 @@ function displayGenerations(generations) {
       }); 
     
     generations.forEach((row) => {
-        const downloadButton = '<button id=dwn-btn class="download-button">' + row.download + '</button>';
+      const downloadButton = `<textarea style='width:100%'>${row.response}</textarea>`;
+        
         $("#example").append(
           "<tr>" +
           "<td>" + row.rank + "</td>" +

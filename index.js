@@ -91,7 +91,7 @@ function setAuthCookie(res, authToken) {
   });
 }
 // GetGenerations
-secureApiRouter.get('/generation', async (_req, res) => {
+secureApiRouter.get('/generation', async (req, res) => {
   try {
     authToken = req.cookies[authCookieName];
     const user = await DB.getUserByToken(authToken);

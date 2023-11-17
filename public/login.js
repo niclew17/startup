@@ -21,9 +21,11 @@ async function loginOrCreate(endpoint) {
     },
   });
   if (response.ok) {
-    //window.location.href = 'generator.html';
+    localStorage.setItem('profileName', userName);
+    window.location.href = 'generator.html';
   } else if (endpoint.endsWith("/login")) {
-    loginOrCreate(`/api/auth/create`);
+    console.log('ayeo');
+    await loginOrCreate(`/api/auth/create`);
   } else {
     const body = await response.json();
     console.log(body.msg);

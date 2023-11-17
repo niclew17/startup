@@ -1,3 +1,5 @@
+const config = require('../apiKey.js');
+
 document.addEventListener("DOMContentLoaded", function () {
   const nameInput = document.getElementById("Name");
   const positionInput = document.getElementById("Position");
@@ -31,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
 const generateResponse = (userMessage, inData) => {
   const API_URL = "https://api.openai.com/v1/chat/completions";
   const messageElement = document.getElementById("output");
-  const config = require('.././dbConfig.json');
   const requestOptions = {
     method: "POST",
     headers: {

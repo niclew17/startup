@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const outputTextarea = document.getElementById("outputName");
-  const outputTextarea2 = document.getElementById("outputPassword");
   const outputTextarea3 = document.getElementById("outputCount");
   outputTextarea.value = localStorage.getItem("profileName") || "John Jones";
-  outputTextarea2.value = localStorage.getItem("profilePassword") || "*******";
-  outputTextarea3.value = localStorage.getItem("counter") || "*******";
 
 }); 
 

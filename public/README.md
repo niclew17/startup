@@ -84,7 +84,25 @@ For this deliverable, I added backend endpoints that receive previous generation
 
 - **Node.js/Express HTTP service** - Finished
 - **Static middleware for frontend** - Finished
-- **Calls to third party endpoints** - Third party call to ChatGpt Completion API.
+- **Calls to third-party endpoints** - Third-party call to ChatGpt Completion API.
 - **Backend service endpoints** - Generations are stored in JSON format and served to the frontend user.
 - **Frontend calls service endpoints** - Used a fetch call to get generation information to the profile data table.
+
+## DB deliverable
+
+For this deliverable, I stored the user's generations in the database.
+
+- **MongoDB Atlas database created** - Finished
+- **Endpoints for data** - My generation endpoints now process the data and send it to Mongo.
+- **Stores data in MongoDB** - Finished
+
+## Login deliverable
+
+For this deliverable, I associated generations with the logged-in user.
+
+- **User registration** - Creates a new account in the database if the user does not already exist.
+- **existing user** - Logs the user in under the same button and stores the generations under the same user if the user already exists.
+- **Use MongoDB to store credentials** - Stores both user and their generations.
+- **Restricts functionality** - You cannot generate information until you log in or an unauthorized error will appear.
+
 

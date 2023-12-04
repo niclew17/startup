@@ -105,4 +105,11 @@ For this deliverable, I associated generations with the logged-in user.
 - **Use MongoDB to store credentials** - Stores both user and their generations.
 - **Restricts functionality** - You cannot generate information until you log in or an unauthorized error will appear.
 
+## WebSocket deliverable
 
+For this deliverable, I used webSocket to update the number of current users on the front end in realtime.
+
+- **Backend listens for WebSocket connection** - Finished
+- **Frontend makes WebSocket connection** - Finished
+- **Data sent over WebSocket connection** - Finished
+- **WebSocket data displayed** - The number of current users will be shown to each user in their user profile.

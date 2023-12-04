@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const app = express();
 const DB = require('./database.js');
+const { peerProxy } = require('./peerProxy.js');
 
 const authCookieName = 'token';
 
@@ -12,9 +13,11 @@ const port = process.argv.length > 2 ? process.argv[2] : 4000;
 // JSON body parsing using built-in middleware
 app.use(express.json());
 app.use(cookieParser());
+app.use(express.static('public'));
+app.set('trust proxy', true);
 
 // Serve up the front-end static content hosting
-app.use(express.static('public'));
+
 
 // Router for service endpoints
 var apiRouter = express.Router();
@@ -102,7 +105,10 @@ app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
 
-app.listen(port, () => {
+const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+peerProxy(httpService);
+
 

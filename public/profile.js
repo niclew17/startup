@@ -1,9 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
   const outputTextarea = document.getElementById("outputName");
-  const outputTextarea3 = document.getElementById("outputCount");
+ 
   outputTextarea.value = localStorage.getItem("profileName") || "John Jones";
+  
+  const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+  const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
 
-}); 
+
+  const outputTextarea3 = document.getElementById("outputCount");
+
+  socket.onmessage = async (event) => {
+    const data = JSON.parse(await event.data);
+    
+    if (data.type === 'userCount') {
+      // Update the user count display
+      outputTextarea3.textContent = `${data.count}`;
+    } else {
+      // Handle other message types as before
+      const chat = data;
+      appendMsg('friend', chat.name, chat.msg);
+    }
+  };
+
+  }); 
+
 
 
 
@@ -39,18 +59,18 @@ function displayGenerations(generations) {
       }
       }); 
     
-    generations.forEach((row) => {
-      const downloadButton = `<textarea style='width:100%'>${row.response}</textarea>`;
+      generations.forEach((row) => {
+        const downloadButton = `<textarea style='width:100%'>${row.response}</textarea>`;
         
         $("#example").append(
-          "<tr>" +
-          "<td>" + row.rank + "</td>" +
-          "<td>" + row.name + "</td>" +
-          "<td>" + row.job + "</td>" +
-          "<td>" + downloadButton + "</td>" +
-          "</tr>"
+            "<tr>" +
+            "<td style='width: 10%'>" + row.rank + "</td>" +
+            "<td style='width: 10%'>" + row.name + "</td>" +
+            "<td style='width: 20%'>" + row.job + "</td>" +
+            "<td style='width: 60%'>" + downloadButton + "</td>" +
+            "</tr>"
         );
-      });
+    });
     
     
       $(document).ready(function () {

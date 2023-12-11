@@ -113,3 +113,12 @@ For this deliverable, I used webSocket to update the number of current users on 
 - **Frontend makes WebSocket connection** - Finished
 - **Data sent over WebSocket connection** - Finished
 - **WebSocket data displayed** - The number of current users will be shown to each user in their user profile.
+
+## React deliverable
+
+For this deliverable, I converted the application over to use React. 
+
+- **Bundled and Transpiled** - Finished
+- **Components** - Login, Generator, and Profile are all components.
+- **Router** - Routing between login and other components.
+- **Hooks** - React.useEffect hook used in each component.

@@ -8,13 +8,13 @@ Imagine you’ve just been assigned to read a resume, but you really don’t hav
 
 ### Design
 
-![Login](images/login1.png)
-![Home](images/home1.png)
-![User](images/user1.png)
+![Login](dist/images/login1.png)
+![Home](dist/images/home1.png)
+![User](dist/images/user1.png)
 
 Here is a sequence diagram that shows how two different users might interact with the server.
 
-![AppliRank Sequence Diagram](images/diagram.JPG)
+![AppliRank Sequence Diagram](dist/images/diagram.JPG)
 
 ### Key features
 
@@ -113,3 +113,12 @@ For this deliverable, I used webSocket to update the number of current users on 
 - **Frontend makes WebSocket connection** - Finished
 - **Data sent over WebSocket connection** - Finished
 - **WebSocket data displayed** - The number of current users will be shown to each user in their user profile.
+
+## React deliverable
+
+For this deliverable, I converted the application over to use React. 
+
+- **Bundled and Transpiled** - Finished
+- **Components** - Login, Generator, and Profile are all components.
+- **Router** - Routing between login and other components.
+- **Hooks** - React.useEffect hook used in each component.

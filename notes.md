@@ -168,3 +168,147 @@
   + We use the .then() method to handle the resolved Promise, printing the random number if it's even.
   + We use the .catch() method to handle the rejected Promise, printing an error message if the number is odd.
   + When you run this code, it will either log a random even number as a success or an error message indicating that the number is odd. The use of Promises is common in JavaScript to manage asynchronous operations and handle success and error scenarios.
+
+
+
+### Final  
+
+1. What ports are used for HTTP, HTTPS, and SSH?
+> 80, 443, 22
+2. What do HTTP status codes in the 300, 400, 500 range indicate?
+> redirect, client error, server error 
+3. What does the HTTP header content type allows you to do?
+> What type of content we are dealing with 
+4. What do the following attributes of a cookie do?
+> Domain - where the cookie is coming from 
+> Path - where it is generated 
+> SameSite - only return to the same domain where it came from 
+> HTTPOnly - stops Javascript from running on the browser so the cookie can be read 
+5. Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /foo/bar?
+> (find the first console log)
+6. Given the following Express service code: What does the following JavaScript fetch return?
+> 
+7. Given the following MongoDB query
+```JS
+{ cost: { $gt: 10 }, name: /fran.*/}
+```
+select all of the matching documents.
+> Grab all docs with a cost greater than 10 and any name with fran followed by any character
+8. How should you store user passwords in a database?
+> Hash and salted 
+9. Assuming the following Node.js service code is executing with WebSockets, what will be logged to the console of the web browser?
+> (look at the console logs)
+10. What is the WebSocket protocol used for?
+> Initiate instant contact between server and client either can start 
+11. What is JSX and how are the curly braces rendered?
+> JS and HTML combined
+12. Assuming an HTML document with a
+```html
+<div id="root"></div>
+``` element, what content will the following React component generate?
+```jsx
+  function Welcome(props) {
+        return <h1>Hello, {props.name}</h1>;
+      }
+      function App() {
+        return (
+          <div>
+            <Welcome name="Sara" />
+            <Welcome name="Cahal" />
+            <Welcome name="Edite" />
+          </div>
+        );
+      }
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+```
+Assuming an HTML document with a
+```html
+<div id="root"></div>
+```
+element, what content will the following React component generate?
+```jsx
+      function Welcome(props) {
+        return <h1>Hello, {props.name}</h1>;
+      }
+      function App() {
+        return (
+          <div>
+            <Welcome name="Sara" />
+            <Welcome name="Cahal" />
+            <Welcome name="Edite" />
+          </div>
+        );
+      }
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+```
+> Return everything in the div tag to the react app 
+13. Assuming an HTML document with a
+```html
+<div id="root"></div>
+```
+element, what content will the following React component generate?
+```jsx 
+    function Numbers() { 
+      const numbers = [1, 2, 3, 4, 5];
+      const listItems = numbers.map((number) =>
+        <li>{number}</li>
+      );
+      return(<ul>{listItems}</ul>)
+    }
+    const root = ReactDOM.createRoot(document.getElementById('root')); 
+    root.render(<Numbers/>);
+    ```
+    > returns the list (order is an unordered list) bullet followed by an item 
+    14. What does the following React component do?
+    ```jsx
+    function Example() {
+  // Declare a new state variable, which we'll call "count"  
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+> Returns a component with a counter and button that adds to the counter
+15. What are React Hooks used for?
+> Change the state of a component like loading on start-up 
+16. What is the useEffect hook used for?
+> watches lifecycle event of components, basically updates the render when things change
+17. What does this code do?
+```jsx
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+```
+> tells the page what to render based on the route (what is searched for)
+18. What role does npm play in web development?
+> Manages node packages and downloads 3rd party packages 
+19. What does package.json do in a npm project?
+> lists all packages, when deploying it tells what packages to install, also has meta info for the project
+20. What does the fetch function do?
+>  Make asynchronous requests to the server and load the information that is returned by the server onto the web pages.
+21. What does node.js do?
+> runs the server 
+22. What does Vite do?
+> Bundles code to for production and can be deployed to a server 
+
+
+

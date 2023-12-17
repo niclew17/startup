@@ -176,18 +176,85 @@
 1. What ports are used for HTTP, HTTPS, and SSH?
 > 80, 443, 22
 2. What do HTTP status codes in the 300, 400, 500 range indicate?
-> redirect, client error, server error 
-3. What does the HTTP header content type allows you to do?
-> What type of content we are dealing with 
+> Redirect, Client error, Server error 
+3. What does the HTTP header content type allow you to do?
+> What type of content we are dealing with
+> The HTTP header "Content-Type" allows you to specify the media type of the resource being sent or received, enabling proper interpretation and processing of the content by indicating whether it is, for example, HTML, JSON, XML, or other formats.
 4. What do the following attributes of a cookie do?
-> Domain - where the cookie is coming from 
-> Path - where it is generated 
-> SameSite - only return to the same domain where it came from 
-> HTTPOnly - stops Javascript from running on the browser so the cookie can be read 
+> Domain - Where the cookie is coming from 
+> Path - Where it is generated 
+> SameSite - Only return to the same domain where it came from 
+> HTTPOnly - Stops Javascript from running on the browser so the cookie can be read 
 5. Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /foo/bar?
 > (find the first console log)
+```JS
+// Middleware function
+const myMiddleware = (req, res, next) => {
+  console.log('This is my custom middleware');
+  console.log('Request Method:', req.method);
+  console.log('Request URL Path:', req.url);
+  next(); // Call next to move to the next middleware in the stack or the route handler
+};
+
+// Express app setup
+const express = require('express');
+const app = express();
+
+// Use the middleware for all routes
+app.use(myMiddleware);
+
+// Route handler
+app.get('/foo/bar', (req, res) => {
+  res.send('Hello from /foo/bar!');
+});
+
+// Start the server
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+```
+```JS
+This is my custom middleware
+Request Method: GET
+Request URL Path: /foo/bar
+Server is running on port 3000
+```
 6. Given the following Express service code: What does the following JavaScript fetch return?
-> 
+> Express Service
+```JS
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/api/data', (req, res) => {
+  const data = {
+    message: 'Hello, this is a JSON response!',
+  };
+  res.json(data);
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+```
+> Fetch Call
+```JS
+const fetchData = async () => {
+  try {
+    const response = await fetch('http://localhost:3000/api/data');
+    const data = await response.json();
+    console.log('Response from server:', data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+
+fetchData();
+```
+> Response:
+> Response from server: { message: 'Hello, this is a JSON response!' }
+
 7. Given the following MongoDB query
 ```JS
 { cost: { $gt: 10 }, name: /fran.*/}
@@ -197,41 +264,84 @@ select all of the matching documents.
 8. How should you store user passwords in a database?
 > Hash and salted 
 9. Assuming the following Node.js service code is executing with WebSockets, what will be logged to the console of the web browser?
-> (look at the console logs)
+```JS
+const WebSocket = require('ws');
+const http = require('http');
+
+const server = http.createServer();
+const wss = new WebSocket.Server({ server });
+
+wss.on('connection', (ws) => {
+  console.log('A new client connected');
+
+  ws.on('message', (message) => {
+    console.log(`Received message: ${message}`);
+  });
+
+  ws.on('close', () => {
+    console.log('Client disconnected');
+  });
+});
+
+server.listen(3000, () => {
+  console.log('WebSocket server is listening on port 3000');
+});
+```
+```HTMl
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSocket Example</title>
+</head>
+<body>
+  <script>
+    const socket = new WebSocket('ws://localhost:3000');
+
+    socket.addEventListener('open', (event) => {
+      console.log('WebSocket connection opened');
+      socket.send('Hello, server!');
+    });
+
+    socket.addEventListener('message', (event) => {
+      console.log('Received message from server:', event.data);
+    });
+
+    socket.addEventListener('close', (event) => {
+      console.log('WebSocket connection closed');
+    });
+  </script>
+</body>
+</html>
+```
+> You might see something like this:
+> WebSocket connection opened
+> Received message from server: Hello, server!
 10. What is the WebSocket protocol used for?
 > Initiate instant contact between server and client either can start 
 11. What is JSX and how are the curly braces rendered?
 > JS and HTML combined
-12. Assuming an HTML document with a
-```html
-<div id="root"></div>
-``` element, what content will the following React component generate?
+> In JSX, you can embed JavaScript expressions by wrapping them in curly braces {}. This allows you to dynamically insert values or execute JavaScript logic within your JSX code. Here's a simple example:
 ```jsx
-  function Welcome(props) {
-        return <h1>Hello, {props.name}</h1>;
-      }
-      function App() {
-        return (
-          <div>
-            <Welcome name="Sara" />
-            <Welcome name="Cahal" />
-            <Welcome name="Edite" />
-          </div>
-        );
-      }
-      const root = ReactDOM.createRoot(document.getElementById('root'));
-      root.render(<App />);
+const name = "World";
+const element = <p>Hello, {name}!</p>;
 ```
-Assuming an HTML document with a
+> When compiled it would look like this JS
+```JS
+const name = "World";
+const element = React.createElement('p', null, 'Hello, ', name, '!');
+```
+12. Assuming an HTML document with a
 ```html
 <div id="root"></div>
 ```
 element, what content will the following React component generate?
 ```jsx
-      function Welcome(props) {
+function Welcome(props) {
         return <h1>Hello, {props.name}</h1>;
       }
-      function App() {
+function App() {
         return (
           <div>
             <Welcome name="Sara" />
@@ -243,7 +353,15 @@ element, what content will the following React component generate?
       const root = ReactDOM.createRoot(document.getElementById('root'));
       root.render(<App />);
 ```
-> Return everything in the div tag to the react app 
+> Return everything in the div tag to the react app, like this
+```html
+<div id="root">
+  <h1>Hello, Sara</h1>
+  <h1>Hello, Cahal</h1>
+  <h1>Hello, Edite</h1>
+</div>
+
+```
 13. Assuming an HTML document with a
 ```html
 <div id="root"></div>
@@ -259,11 +377,22 @@ element, what content will the following React component generate?
     }
     const root = ReactDOM.createRoot(document.getElementById('root')); 
     root.render(<Numbers/>);
-    ```
-    > returns the list (order is an unordered list) bullet followed by an item 
-    14. What does the following React component do?
-    ```jsx
-    function Example() {
+```
+> The given React component Numbers generates an unordered list with list items based on the numbers array. The content of the div with the id "root" in your HTML document will be:
+```HTML
+<div id="root">
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+</div>
+```
+14. What does the following React component do?
+```jsx
+function Example() {
   // Declare a new state variable, which we'll call "count"  
   const [count, setCount] = useState(0);
   return (
@@ -278,9 +407,49 @@ element, what content will the following React component generate?
 ```
 > Returns a component with a counter and button that adds to the counter
 15. What are React Hooks used for?
-> Change the state of a component like loading on start-up 
+> Change the state of a component like loading on start-up
+> useState:  Allows functional components to have local state. It returns an array with two elements: the current state value and a function that lets you update it. For example:
+```jsx
+import React, { useState } from 'react';
+
+function ExampleComponent() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
 16. What is the useEffect hook used for?
-> watches lifecycle event of components, basically updates the render when things change
+> Watches lifecycle event of components, basically updates the render when things change
+> useEffect: Allows the execution of side effects in functional components. It replaces lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount in class components. For example:
+```jsx
+import React, { useState, useEffect } from 'react';
+
+function ExampleComponent() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // Fetch data or perform side effects here
+    // This function will run after the component renders
+    // and can also clean up after the component is unmounted
+    return () => {
+      // Cleanup code (optional)
+    };
+  }, []); // The second argument controls when the effect runs
+
+  return (
+    <div>
+      {/* Render component based on data */}
+    </div>
+  );
+}
+```
 17. What does this code do?
 ```jsx
 export default function App() {
@@ -300,15 +469,22 @@ export default function App() {
 ```
 > tells the page what to render based on the route (what is searched for)
 18. What role does npm play in web development?
-> Manages node packages and downloads 3rd party packages 
+> Manages node packages and downloads 3rd party packages
+> NPM (Node Package Manager) is a fundamental component in web development, serving as a comprehensive package manager for JavaScript and Node.js. It enables developers to effortlessly install, manage, and distribute code packages, fostering a centralized repository for reusable libraries. Playing a pivotal role in dependency management, npm ensures the orderly tracking of project dependencies in a package.json file, promoting consistent and reproducible builds by managing version control. Additionally, npm facilitates scripting through the package.json file, empowering developers to define and execute various tasks, such as build processes and test runs. Its utility extends to global tooling, allowing the installation and management of tools like webpack and ESLint on a global scale. Moreover, npm fosters community collaboration by providing a platform for developers to share code, contribute to existing projects, and engage in open-source development. It also simplifies project initialization with templates and incorporates security features for auditing and addressing vulnerabilities in dependencies, solidifying its role as a key player in modern web development workflows. 
 19. What does package.json do in a npm project?
-> lists all packages, when deploying it tells what packages to install, also has meta info for the project
+> 1. Lists all packages
+> 2. When deploying it tells what packages to install
+> 3. Has meta info for the project
+> The package.json file in an npm project serves as a pivotal configuration file, encapsulating metadata and essential information. It manages project dependencies through the dependencies and devDependencies sections, specifying required packages and their versions. Additionally, it facilitates version control by allowing developers to define semantic versioning rules for dependencies. The scripts section enables the creation of custom commands for various tasks, and the file includes metadata like project name, description, author, and license. Often used for project initialization and setup, the package.json file is crucial for establishing project parameters and global tooling. It also supports security auditing through the npm audit command, checking for vulnerabilities in dependencies, consolidating its role as a central hub for project configuration and management in the npm ecosystem.
 20. What does the fetch function do?
 >  Make asynchronous requests to the server and load the information that is returned by the server onto the web pages.
+> The fetch function in JavaScript is used to make asynchronous HTTP requests to a specified URL, returning a Promise that resolves to the Response to that request, allowing for handling and processing of the data.
 21. What does node.js do?
-> runs the server 
+> Runs the server
+> Node.js is a server-side JavaScript runtime environment that enables the execution of JavaScript code outside of a web browser, facilitating the development of scalable and efficient network applications. 
 22. What does Vite do?
-> Bundles code to for production and can be deployed to a server 
+> Bundles code for production and can be deployed to a server
+> Vite is a build tool for modern web development that offers fast and efficient development and production workflows for frontend projects, particularly those using Vue.js, React, or other JavaScript frameworks.
 
 
 
